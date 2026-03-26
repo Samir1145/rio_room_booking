@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+@theme {
+  --color-background: #f9f9f9;
+  --color-surface: #f9f9f9;
+  --color-surface-container-low: #f3f3f3;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #e8e8e8;
+  --color-surface-container-highest: #e2e2e2;
+  --color-on-surface: #1a1c1c;
+  --color-on-background: #1a1c1c;
+  --color-primary: #ba0036;
+  --color-primary-container: #e21e4a;
+  --color-on-primary: #ffffff;
+  --color-secondary: #5f5e5e;
+  --color-secondary-fixed-dim: #c8c6c5;
+  --color-outline-variant: #e5bdbe;
+  --color-on-surface-variant: #5c3f41;
+  --font-headline: 'Manrope', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-label: 'Manrope', sans-serif;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  min-height: max(884px, 100dvh);
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.editorial-grid > div:nth-child(3n+1) {
+  grid-column: span 2;
+}
+@media (min-width: 768px) {
+  .editorial-grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+  .editorial-grid > div:nth-child(3n+1) {
+      grid-column: span 1;
+  }
+  .editorial-grid > div:nth-child(4n+1) {
+      grid-column: span 2;
+      grid-row: span 2;
+  }
+}
